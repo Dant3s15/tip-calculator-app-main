@@ -1,0 +1,365 @@
+:root {
+  --strongCyan: hsl(172, 67%, 45%);
+  --veryDarkCyan: hsl(183, 100%, 15%);
+  --darkGrayishCyan: hsl(186, 14%, 43%);
+  --darkGrayishCyan2: hsl(184, 14%, 56%);
+  --lightGrayishCyan: hsl(185, 41%, 84%);
+  --lightGrayishCyan2: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --mainFont: 'Space Mono', monospace;
+  --regularWeight: 400;
+  --boldWeight: 700;
+  --formInputs: 24px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--mainFont);
+  background-color: var(--lightGrayishCyan);
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body input::-webkit-outer-spin-button,
+body input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body input[type=number] {
+  -moz-appearance: textfield;
+  padding: 0 5%;
+  font-family: var(--mainFont);
+  font-weight: 700;
+  text-align: end;
+  position: relative;
+  color: var(--veryDarkCyan);
+  font-size: var(--formInputs);
+  background-color: var(--lightGrayishCyan2);
+  border-radius: 5px;
+  border: none;
+}
+
+body input[type=number] ::-webkit-input-placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+body input[type=number] :-ms-input-placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+body input[type=number] ::-ms-input-placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+body input[type=number] ::placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+body input[type=number]:focus, body input[type=number]:hover {
+  outline: solid var(--strongCyan);
+}
+
+main .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+main h5 {
+  margin-bottom: 10px;
+  color: var(--darkGrayishCyan);
+  font-weight: var(--boldWeight);
+}
+
+main .calculator {
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+main .calculator .wrapper {
+  padding: 32px;
+}
+
+main .calculator .wrapper .btnfields .percentagestitle {
+  margin-bottom: 10px;
+}
+
+main .calculator .wrapper .btnfields .billfield {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+main .calculator .wrapper .btnfields .billfield img {
+  position: absolute;
+  top: 33%;
+  left: 5%;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+main .calculator .wrapper .btnfields .billfield #billfield {
+  padding: 0 5%;
+  width: 90%;
+  height: 50px;
+  font-family: var(--mainFont);
+  font-weight: 700;
+  text-align: end;
+  position: relative;
+  color: var(--veryDarkCyan);
+  font-size: var(--formInputs);
+  background-color: var(--lightGrayishCyan2);
+  border-radius: 5px;
+  border: none;
+}
+
+main .calculator .wrapper .btnfields .billfield #billfield ::-webkit-input-placeholder {
+  position: absolute;
+  right: 80px;
+}
+
+main .calculator .wrapper .btnfields .billfield #billfield :-ms-input-placeholder {
+  position: absolute;
+  right: 80px;
+}
+
+main .calculator .wrapper .btnfields .billfield #billfield ::-ms-input-placeholder {
+  position: absolute;
+  right: 80px;
+}
+
+main .calculator .wrapper .btnfields .billfield #billfield ::placeholder {
+  position: absolute;
+  right: 80px;
+}
+
+main .calculator .wrapper .btnfields .billfield #billfield:focus, main .calculator .wrapper .btnfields .billfield #billfield:hover {
+  outline: solid var(--strongCyan);
+}
+
+main .calculator .wrapper .btnfields .percentages {
+  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+main .calculator .wrapper .btnfields .percentages .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--veryDarkCyan);
+  border-radius: 5px;
+  text-align: center;
+  font-family: var(--mainFont);
+  font-size: var(--formInputs);
+  font-weight: 700;
+  width: 48%;
+  margin-bottom: 5%;
+  height: 30%;
+  color: var(--white);
+  border: none;
+}
+
+main .calculator .wrapper .btnfields .percentages .btn h2 {
+  margin: auto 0;
+  vertical-align: middle;
+}
+
+main .calculator .wrapper .btnfields .percentages .btn:hover, main .calculator .wrapper .btnfields .percentages .btn:active, main .calculator .wrapper .btnfields .percentages .btn:focus {
+  outline: none;
+  background-color: var(--strongCyan);
+  color: var(--veryDarkCyan);
+}
+
+main .calculator .wrapper .btnfields .percentages #custom {
+  padding: 0 5%;
+  width: 38%;
+  font-family: var(--mainFont);
+  font-weight: 700;
+  text-align: end;
+  position: relative;
+  color: var(--veryDarkCyan);
+  font-size: var(--formInputs);
+  background-color: var(--lightGrayishCyan2);
+  border-radius: 5px;
+  border: none;
+}
+
+main .calculator .wrapper .btnfields .percentages #custom ::-webkit-input-placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+main .calculator .wrapper .btnfields .percentages #custom :-ms-input-placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+main .calculator .wrapper .btnfields .percentages #custom ::-ms-input-placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+main .calculator .wrapper .btnfields .percentages #custom ::placeholder {
+  position: absolute;
+  right: 80px;
+  color: var(--veryDarkCyan);
+}
+
+main .calculator .wrapper .btnfields .percentages #custom:focus, main .calculator .wrapper .btnfields .percentages #custom:hover {
+  outline: solid var(--strongCyan);
+}
+
+main .calculator .wrapper .btnfields .percentages .btn:last-child {
+  color: var(--veryDarkCyan);
+  background-color: var(--lightGrayishCyan2);
+}
+
+main .calculator .wrapper .numberofpeople {
+  position: relative;
+}
+
+main .calculator .wrapper .numberofpeople img {
+  position: absolute;
+  top: 33%;
+  left: 5%;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+main .calculator .wrapper .results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: var(--veryDarkCyan);
+  height: 256px;
+  margin-top: 32px;
+  border-radius: 15px;
+}
+
+main .calculator .wrapper .results h4 {
+  color: var(--white);
+}
+
+main .calculator .wrapper .results .tipamount, main .calculator .wrapper .results .total {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  width: 100%;
+  margin: 0px 24px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+main .calculator .wrapper .results .tipamount:not(:nth-child(2)), main .calculator .wrapper .results .total:not(:nth-child(2)) {
+  margin: 50px 24px 0 24px;
+}
+
+main .calculator .wrapper .results .tipamount h4, main .calculator .wrapper .results .tipamount h5, main .calculator .wrapper .results .total h4, main .calculator .wrapper .results .total h5 {
+  margin: 0;
+  height: 30%;
+  margin: 5px 0;
+}
+
+main .calculator .wrapper .results .tipamount .dollarresult, main .calculator .wrapper .results .total .dollarresult {
+  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  height: 100%;
+  color: white;
+}
+
+main .calculator .wrapper .results .tipamount .dollarresult h1, main .calculator .wrapper .results .total .dollarresult h1 {
+  color: var(--strongCyan);
+}
+
+main .calculator .wrapper .results .total {
+  width: 100%;
+}
+
+main .calculator .wrapper .results .reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--strongCyan);
+  width: 100%;
+  height: 50px;
+  margin: 0 24px;
+  border-radius: 5px;
+}
+
+main .calculator .wrapper .results .reset h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--veryDarkCyan);
+}
+/*# sourceMappingURL=style.css.map */
