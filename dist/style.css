@@ -15,6 +15,8 @@
 body {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: var(--mainFont);
   background-color: var(--lightGrayishCyan);
 }
@@ -33,6 +35,8 @@ body input::-webkit-inner-spin-button {
 body input[type=number] {
   -moz-appearance: textfield;
   padding: 0 5%;
+  width: 90%;
+  height: 50px;
   font-family: var(--mainFont);
   font-weight: 700;
   text-align: end;
@@ -72,6 +76,19 @@ body input[type=number]:focus, body input[type=number]:hover {
   outline: solid var(--strongCyan);
 }
 
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 main .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,10 +109,28 @@ main h5 {
 main .calculator {
   background-color: var(--white);
   border-radius: 15px;
+  max-width: 920px;
 }
 
 main .calculator .wrapper {
   padding: 32px;
+}
+
+@media (min-width: 1025px) {
+  main .calculator .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  main .calculator .wrapper .btnfields {
+    width: 420px;
+    height: 420px;
+    padding: 50px 50px 50px 50px;
+  }
 }
 
 main .calculator .wrapper .btnfields .percentagestitle {
@@ -116,48 +151,9 @@ main .calculator .wrapper .btnfields .billfield {
 main .calculator .wrapper .btnfields .billfield img {
   position: absolute;
   top: 33%;
-  left: 5%;
+  left: 15px;
   -ms-grid-column-align: start;
       justify-self: start;
-}
-
-main .calculator .wrapper .btnfields .billfield #billfield {
-  padding: 0 5%;
-  width: 90%;
-  height: 50px;
-  font-family: var(--mainFont);
-  font-weight: 700;
-  text-align: end;
-  position: relative;
-  color: var(--veryDarkCyan);
-  font-size: var(--formInputs);
-  background-color: var(--lightGrayishCyan2);
-  border-radius: 5px;
-  border: none;
-}
-
-main .calculator .wrapper .btnfields .billfield #billfield ::-webkit-input-placeholder {
-  position: absolute;
-  right: 80px;
-}
-
-main .calculator .wrapper .btnfields .billfield #billfield :-ms-input-placeholder {
-  position: absolute;
-  right: 80px;
-}
-
-main .calculator .wrapper .btnfields .billfield #billfield ::-ms-input-placeholder {
-  position: absolute;
-  right: 80px;
-}
-
-main .calculator .wrapper .btnfields .billfield #billfield ::placeholder {
-  position: absolute;
-  right: 80px;
-}
-
-main .calculator .wrapper .btnfields .billfield #billfield:focus, main .calculator .wrapper .btnfields .billfield #billfield:hover {
-  outline: solid var(--strongCyan);
 }
 
 main .calculator .wrapper .btnfields .percentages {
@@ -182,6 +178,14 @@ main .calculator .wrapper .btnfields .percentages {
   margin-bottom: 40px;
 }
 
+@media (min-width: 1025px) {
+  main .calculator .wrapper .btnfields .percentages {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-bottom: 0px;
+  }
+}
+
 main .calculator .wrapper .btnfields .percentages .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -197,9 +201,16 @@ main .calculator .wrapper .btnfields .percentages .btn {
   font-weight: 700;
   width: 48%;
   margin-bottom: 5%;
+  min-height: 50px;
   height: 30%;
   color: var(--white);
   border: none;
+}
+
+@media (min-width: 1025px) {
+  main .calculator .wrapper .btnfields .percentages .btn {
+    width: 31%;
+  }
 }
 
 main .calculator .wrapper .btnfields .percentages .btn h2 {
@@ -215,10 +226,10 @@ main .calculator .wrapper .btnfields .percentages .btn:hover, main .calculator .
 
 main .calculator .wrapper .btnfields .percentages #custom {
   padding: 0 5%;
-  width: 38%;
+  width: 100%;
   font-family: var(--mainFont);
   font-weight: 700;
-  text-align: end;
+  text-align: center;
   position: relative;
   color: var(--veryDarkCyan);
   font-size: var(--formInputs);
@@ -267,7 +278,7 @@ main .calculator .wrapper .numberofpeople {
 main .calculator .wrapper .numberofpeople img {
   position: absolute;
   top: 33%;
-  left: 5%;
+  left: 15px;
   -ms-grid-column-align: start;
       justify-self: start;
 }
@@ -276,6 +287,8 @@ main .calculator .wrapper .results {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background-color: var(--veryDarkCyan);
@@ -284,11 +297,31 @@ main .calculator .wrapper .results {
   border-radius: 15px;
 }
 
+@media (min-width: 1025px) {
+  main .calculator .wrapper .results {
+    width: 420px;
+    height: 420px;
+    margin: 32px 32px 32px 0;
+    height: auto;
+  }
+}
+
 main .calculator .wrapper .results h4 {
   color: var(--white);
 }
 
-main .calculator .wrapper .results .tipamount, main .calculator .wrapper .results .total {
+@media (min-width: 1025px) {
+  main .calculator .wrapper .results h1 {
+    font-size: 38px;
+  }
+}
+
+main .calculator .wrapper .results .resultsnumbers {
+  width: 100%;
+  height: 60%;
+}
+
+main .calculator .wrapper .results .resultsnumbers .tipamount, main .calculator .wrapper .results .resultsnumbers .total {
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -297,7 +330,6 @@ main .calculator .wrapper .results .tipamount, main .calculator .wrapper .result
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  width: 100%;
   margin: 0px 24px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -306,17 +338,23 @@ main .calculator .wrapper .results .tipamount, main .calculator .wrapper .result
       align-content: space-between;
 }
 
-main .calculator .wrapper .results .tipamount:not(:nth-child(2)), main .calculator .wrapper .results .total:not(:nth-child(2)) {
+@media (min-width: 1025px) {
+  main .calculator .wrapper .results .resultsnumbers .tipamount, main .calculator .wrapper .results .resultsnumbers .total {
+    margin: 50px 24px 0 24px;
+  }
+}
+
+main .calculator .wrapper .results .resultsnumbers .tipamount:not(:nth-child(2)), main .calculator .wrapper .results .resultsnumbers .total:not(:nth-child(2)) {
   margin: 50px 24px 0 24px;
 }
 
-main .calculator .wrapper .results .tipamount h4, main .calculator .wrapper .results .tipamount h5, main .calculator .wrapper .results .total h4, main .calculator .wrapper .results .total h5 {
+main .calculator .wrapper .results .resultsnumbers .tipamount h4, main .calculator .wrapper .results .resultsnumbers .tipamount h5, main .calculator .wrapper .results .resultsnumbers .total h4, main .calculator .wrapper .results .resultsnumbers .total h5 {
   margin: 0;
   height: 30%;
   margin: 5px 0;
 }
 
-main .calculator .wrapper .results .tipamount .dollarresult, main .calculator .wrapper .results .total .dollarresult {
+main .calculator .wrapper .results .resultsnumbers .tipamount .dollarresult, main .calculator .wrapper .results .resultsnumbers .total .dollarresult {
   text-align: end;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -332,12 +370,8 @@ main .calculator .wrapper .results .tipamount .dollarresult, main .calculator .w
   color: white;
 }
 
-main .calculator .wrapper .results .tipamount .dollarresult h1, main .calculator .wrapper .results .total .dollarresult h1 {
+main .calculator .wrapper .results .resultsnumbers .tipamount .dollarresult h1, main .calculator .wrapper .results .resultsnumbers .total .dollarresult h1 {
   color: var(--strongCyan);
-}
-
-main .calculator .wrapper .results .total {
-  width: 100%;
 }
 
 main .calculator .wrapper .results .reset {
@@ -353,8 +387,9 @@ main .calculator .wrapper .results .reset {
   background-color: var(--strongCyan);
   width: 100%;
   height: 50px;
-  margin: 0 24px;
+  margin: 24px;
   border-radius: 5px;
+  opacity: 0.2;
 }
 
 main .calculator .wrapper .results .reset h2 {

@@ -1,5 +1,7 @@
 main{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .logo{
         display: flex;
         justify-content: center;
@@ -15,15 +17,27 @@ main{
     .calculator{
         background-color: var(--white);
         border-radius: 15px;
+
+       max-width: 920px;
        // margin: 32px;
         .wrapper{
+            @media (min-width: 1025px) {
+                display: flex;
+                padding: 0;
+            }
+           
+            
            // margin-top: 142px;
             padding: 32px;
             .btnfields{
                 // .billwrapper{
                 //     padding-top: 32px;
                 // }
- 
+                @media (min-width: 1025px) {
+                    width: 420px;
+                    height: 420px;
+                    padding: 50px 50px 50px 50px;
+                }
                 .percentagestitle{
                     margin-bottom: 10px;
                 }
@@ -35,31 +49,19 @@ main{
                     img{
                         position: absolute;
                         top: 33%;
-                        left: 5%;
+                        left: 15px;
                         justify-self: start;
 
                     }
-                    #billfield{
-                        padding: 0 5%;
-                        width: 90%;
-                        height: 50px;
-                        font-family: var(--mainFont);
-                        font-weight: 700;
-                        text-align: end;
-                        position: relative;
-                        color: var(--veryDarkCyan);
-                        font-size: var(--formInputs);
-                        background-color: var(--lightGrayishCyan2);
-                        border-radius: 5px;
-                        border: none;
-                        ::placeholder{
-                            position: absolute;
-                            right: 80px;
-                        }
-                       &:focus,&:hover{
-                        outline: solid var(--strongCyan);
-                       }
-                    }
+                    // #billfield{
+                    //     // ::placeholder{
+                    //     //     position: absolute;
+                    //     //     right: 80px;
+                    //     // }
+                    //    &:focus,&:hover{
+                    //     outline: solid var(--strongCyan);
+                    //    }
+                    // }
  
                 }
                 .percentages{
@@ -71,6 +73,11 @@ main{
                     align-content: space-between;
                     align-items: flex-end;
                     margin-bottom: 40px;
+                    @media (min-width: 1025px) {
+                        
+                        align-content: center;
+                        margin-bottom: 0px;
+                     }
                     .btn{
                         display: flex;
                         justify-content: center;
@@ -82,10 +89,15 @@ main{
                         font-weight: 700;
                         width: 48%;
                         margin-bottom: 5%;
+                        min-height: 50px;
                         height: 30%;
                         color: var(--white);
                         border: none;
                         //margin-bottom: 18px;
+                        @media (min-width: 1025px) {
+                    
+                           width: 31%;
+                        }
 
                         h2{
                             margin: auto 0;
@@ -104,17 +116,21 @@ main{
                     // }
                     #custom{
                         padding: 0 5%;
-                        width: 38%;
+                        width: 100%;
                         // height: 50px;
                         font-family: var(--mainFont);
                         font-weight: 700;
-                        text-align: end;
+                        text-align: center;
                         position: relative;
                         color: var(--veryDarkCyan);
                         font-size: var(--formInputs);
                         background-color: var(--lightGrayishCyan2);
                         border-radius: 5px;
                         border: none;
+                        // @media (min-width: 1025px) {
+                    
+                        //     width: 21%;
+                        //  }
                         ::placeholder{
                             position: absolute;
                             right: 80px;
@@ -135,10 +151,11 @@ main{
                 }
                 .numberofpeople{
                     position: relative;
+                    
                     img{
                         position: absolute;
                         top: 33%;
-                        left: 5%;
+                        left: 15px;
                         justify-self: start;
 
                     }
@@ -146,7 +163,7 @@ main{
             .results{
                 display: flex;
                // align-items: center;
-                
+               align-content: space-between;
                 flex-wrap: wrap;
 
                 background-color: var(--veryDarkCyan);
@@ -154,49 +171,66 @@ main{
                 margin-top: 32px;
               //  margin-bottom: 32px;
                 border-radius: 15px;
+                @media (min-width: 1025px) {
+                    width: 420px;
+                    height: 420px;
+                    margin: 32px 32px 32px 0;
+                    height: auto;
+                }
                 h4{
                     color: var(--white);
                 }
+                h1{
+                    @media (min-width: 1025px) {
+                    
+                        font-size: 38px;
+                     }
+                }
+               .resultsnumbers{
+                   width: 100%;
+                   height: 60%;
+              
                 .tipamount,.total{
-                   // height: 25%;
-                    height: 50px;
-                    display: flex;
-                    flex-flow: column wrap;
-                    //border: 1px solid red;
-                    width: 100%;
-                    margin: 0px 24px;
-                    justify-content: center;
-                    align-content: space-between;
-                    &:not(:nth-child(2)){
+                    // height: 25%;
+                     height: 50px;
+                     display: flex;
+                     flex-flow: column wrap;
+                     //border: 1px solid red;
+                    // width: 100%;
+                     margin: 0px 24px;
+                     justify-content: center;
+                     align-content: space-between;
+                     @media (min-width: 1025px) {
+                    
                         margin: 50px 24px 0 24px ;
-                    }
-                    h4,h5{
-                        margin: 0;
-                        height: 30%;
-                        margin: 5px 0;
-                        //border: 1px solid red;
-                    }
-                    .dollarresult{
-                        text-align: end;
-                        display: flex;
-                        justify-content: end;
-                        align-items: center;
-                        width: 50%;
-                        height: 100%;
-                        color:white;
-                        //float: right;
-                        //border: 1px solid red;
-                        h1{
-                            color: var(--strongCyan);
-                        }
-                    }
+                     }
+                     &:not(:nth-child(2)){
+                         margin: 50px 24px 0 24px ;
+                     }
+                     h4,h5{
+                         margin: 0;
+                         height: 30%;
+                         margin: 5px 0;
+                         //border: 1px solid red;
+                     }
+                     .dollarresult{
+                         text-align: end;
+                         display: flex;
+                         justify-content: end;
+                         align-items: center;
+                         width: 50%;
+                         height: 100%;
+                         color:white;
+                         //float: right;
+                         //border: 1px solid red;
+                         h1{
+                             color: var(--strongCyan);
+                         }
+                     }
+ 
+                 }
+               }
 
-                }
-                .total{
-                    //border: 1px solid red;
-                   // height: 33%;
-                    width: 100%;
-                }
                 .reset{
                     //border: 1px solid red;
                     //height: 33%;
@@ -206,9 +240,9 @@ main{
                     background-color: var(--strongCyan);
                     width: 100%;
                     height: 50px;
-                    margin: 0 24px;
+                    margin: 24px;
                     border-radius: 5px;
-                    
+                    opacity: 0.2;
                     h2{
                        
                         text-align: center;

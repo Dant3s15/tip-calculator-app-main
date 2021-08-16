@@ -30,20 +30,21 @@
               <input type="number" name="billfield" id="billfield" placeholder="0">
               <img src="/images/icon-dollar.svg" alt="dollar">
             </div>
-          </div>
-
+          
+          
           <h5>Select Tip %</h5> 
           <div class="percentages">
             <!-- <button class="btn"><h2>5%</h2></button>
             <button class="btn"><h2>10%</h2></button>
             <button class="btn"><h2>15%</h2></button>
             <button class="btn"><h2>25%</h2></button> -->
-            <input class="btn" type="button" value="5%">
-            <input class="btn" type="button" value="10%">
-            <input class="btn" type="button" value="15%">
-            <input class="btn" type="button" value="25%">
-            <input class="btn" type="button" value="50%">
-            <input class="btn custom" type="number" name="custom" id="custom" placeholder="Custom"></div>
+            <input class="btn" id="5" type="button" value="5%">
+            <input class="btn" id="10" type="button" value="10%">
+            <input class="btn" id="15" type="button" value="15%">
+            <input class="btn" id="25" type="button" value="25%">
+            <input class="btn" id="50" type="button" value="50%">
+            <div class="btn"><input class="btn custom" type="number" name="custom" id="custom" placeholder="Custom"></div></div>
+            
             <!-- <button class="btn"><h2>50%</h2></button> -->
             <!-- <div ><h2>5%</h2></div>
             <div class="btn"><h2>10%</h2></div>
@@ -57,18 +58,21 @@
             <input type="number" name="numberofpeople" id="numberofpeople" placeholder="0">
             <img src="/images/icon-person.svg" alt="person">
           </div>
+        </div>
           <div class="results">
-            <div class="tipamount">
-              <!-- <div class="resultname"></div> -->
-              <h4>Tip Amount</h4>
-              <h5>/ person</h5>
-              <div class="dollarresult"><h1>$</h1><h1 id="tipamount">0.00</h1></div> 
+            <div class="resultsnumbers">
+              <div class="tipamount">
+                <h4>Tip Amount</h4>
+                <h5>/ person</h5>
+                <div class="dollarresult"><h1>$</h1><h1 id="tipamount">0.00</h1></div> 
+              </div>
+              <div class="total">
+                <h4>Total</h4>
+                <h5>/ person</h5>
+                <div class="dollarresult"><h1>$</h1><h1 id="totalresult">0.00</h1></div> 
+              </div>
             </div>
-            <div class="total">
-              <h4>Total</h4>
-              <h5>/ person</h5>
-              <div class="dollarresult"><h1>$</h1><h1 id="totalresult">0.00</h1></div> 
-            </div>
+           
             <div class="reset"><h2>Reset</h2></div>
           </div>
         </div>
@@ -89,17 +93,11 @@
 
   
 
-  Tip Amount
-  / person
 
-  Total
-  / person
-
-  Reset
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Damian Sobieraj</a>.
   </div>
+  <script src="/dist/app/js/calculator.js"></script>
 </body>
 </html>
