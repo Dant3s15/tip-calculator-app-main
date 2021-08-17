@@ -36,5 +36,12 @@ body{
        &:focus,&:hover{
         outline: solid var(--strongCyan);
        }
-      }
+    }
+    .redoutline{
+        outline: solid red !important; 
+        // &:focus,&:hover{
+        //     outline: solid red !important;           }
+      
+
+    }
 }

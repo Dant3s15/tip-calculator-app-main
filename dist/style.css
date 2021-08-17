@@ -77,6 +77,10 @@ body input[type=number]:focus, body input[type=number]:hover {
   outline: solid var(--strongCyan);
 }
 
+body .redoutline {
+  outline: solid red !important;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -107,11 +111,10 @@ main h5 {
   font-weight: var(--boldWeight);
 }
 
-main #numberofpeopleheader::after {
+main #nozeropeople, main #nozerobill {
   visibility: hidden;
-  color: red;
   float: right;
-  content: "Can't be zero";
+  color: red;
 }
 
 main #billheader::after {
@@ -240,7 +243,7 @@ main .calculator .wrapper .btnfields .percentages .btn:hover, main .calculator .
 }
 
 main .calculator .wrapper .btnfields .percentages .activebtn {
-  background-color: var(--strongCyan);
+  background-color: var(--strongCyan) !important;
 }
 
 main .calculator .wrapper .btnfields .percentages #custom {
@@ -252,7 +255,7 @@ main .calculator .wrapper .btnfields .percentages #custom {
   position: relative;
   color: var(--veryDarkCyan);
   font-size: var(--formInputs);
-  background-color: var(--lightGrayishCyan2);
+  background-color: var(--lightGrayishCyan2) !important;
   border-radius: 5px;
   border: none;
 }
