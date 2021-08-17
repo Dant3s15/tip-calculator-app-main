@@ -6,6 +6,7 @@
   --lightGrayishCyan: hsl(185, 41%, 84%);
   --lightGrayishCyan2: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
+  --lightCyan: hsl(173, 61%, 77%);
   --mainFont: 'Space Mono', monospace;
   --regularWeight: 400;
   --boldWeight: 700;
@@ -104,6 +105,20 @@ main h5 {
   margin-bottom: 10px;
   color: var(--darkGrayishCyan);
   font-weight: var(--boldWeight);
+}
+
+main #numberofpeopleheader::after {
+  visibility: hidden;
+  color: red;
+  float: right;
+  content: "Can't be zero";
+}
+
+main #billheader::after {
+  visibility: hidden;
+  color: red;
+  float: right;
+  content: "Can't be zero";
 }
 
 main .calculator {
@@ -220,8 +235,12 @@ main .calculator .wrapper .btnfields .percentages .btn h2 {
 
 main .calculator .wrapper .btnfields .percentages .btn:hover, main .calculator .wrapper .btnfields .percentages .btn:active, main .calculator .wrapper .btnfields .percentages .btn:focus {
   outline: none;
+  background-color: var(--lightCyan);
+  color: var(--white);
+}
+
+main .calculator .wrapper .btnfields .percentages .activebtn {
   background-color: var(--strongCyan);
-  color: var(--veryDarkCyan);
 }
 
 main .calculator .wrapper .btnfields .percentages #custom {
