@@ -67,7 +67,10 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
     numberOfPeople = numberOfPeople.value;
 
     if ((buttonsArr == 6)&&(buttons[6].value != "")){
-        
+        buttons[6].style.outline="solid var(--strongCyan)";
+        if (buttons[6].value==0){
+            buttons[6].style.outline="solid red";
+        }
         selectedBtn = percent = buttons[6].value;
         
         let tipResult = tipamount.innerHTML = Math.round(((bill / numberOfPeople) * percent / 100) * 100) / 100;
@@ -76,6 +79,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
     }//value of custom field
 
     if (buttonsArr<=5){  
+        buttons[6].style.outline="none";
         selectedBtn = percent = buttons[buttonsArr].id;
         let tipResult = tipamount.innerHTML = Math.round(((bill / numberOfPeople) * percent / 100) * 100) / 100;
         totaltip = totalTip.innerHTML = Math.round(((bill / numberOfPeople) + tipResult) * 100) / 100;
@@ -117,6 +121,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 }
 
 function ResetFields(){
+    buttons[6].style.outline="none";
         for(var i = 0; i < getClass.length; i++)
         {
             getClass[i].classList.remove('activebtn');

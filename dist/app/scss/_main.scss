@@ -1,4 +1,5 @@
 main{
+    transition: all 1s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,20 +31,14 @@ main{
         border-radius: 15px;
 
        max-width: 920px;
-       // margin: 32px;
         .wrapper{
             @media (min-width: 1025px) {
                 display: flex;
                 padding: 0;
             }
-           
-            
-           // margin-top: 142px;
+
             padding: 32px;
             .btnfields{
-                // .billwrapper{
-                //     padding-top: 32px;
-                // }
                 @media (min-width: 1025px) {
                     width: 420px;
                     height: 420px;
@@ -64,16 +59,6 @@ main{
                         justify-self: start;
 
                     }
-                    // #billfield{
-                    //     // ::placeholder{
-                    //     //     position: absolute;
-                    //     //     right: 80px;
-                    //     // }
-                    //    &:focus,&:hover{
-                    //     outline: solid var(--strongCyan);
-                    //    }
-                    // }
- 
                 }
                 .percentages{
                     height: 180px;
@@ -85,7 +70,6 @@ main{
                     align-items: flex-end;
                     margin-bottom: 40px;
                     @media (min-width: 1025px) {
-                        
                         align-content: center;
                         margin-bottom: 0px;
                      }
@@ -105,6 +89,7 @@ main{
                         color: var(--white);
                         border: none;
                         cursor: pointer;
+
                         @media (min-width: 1025px) {
                            width: 31%;
                         }
@@ -125,13 +110,10 @@ main{
                     .activebtn{
                         background-color: var(--strongCyan) !important;
                     }
-                    // button:active{
-                    //     border: none;
-                    // }
+
                     #custom{
                         padding: 0 5%;
                         width: 100%;
-                        // height: 50px;
                         font-family: var(--mainFont);
                         font-weight: 700;
                         text-align: center;
@@ -141,18 +123,16 @@ main{
                         background-color: var(--lightGrayishCyan2) !important;
                         border-radius: 5px;
                         border: none;
-                        // @media (min-width: 1025px) {
-                    
-                        //     width: 21%;
-                        //  }
+                        
                         ::placeholder{
                             position: absolute;
                             right: 80px;
                             color: var(--veryDarkCyan);
                         }
-                       &:focus,&:hover{
-                        outline: solid var(--strongCyan);
-                       }
+
+                        &:focus,&:hover{
+                            outline: solid var(--strongCyan);
+                        }
                     }
 
                     .btn:last-child{
@@ -176,15 +156,13 @@ main{
             }
             .results{
                 display: flex;
-               // align-items: center;
-               align-content: space-between;
+                align-content: space-between;
                 flex-wrap: wrap;
-
                 background-color: var(--veryDarkCyan);
                 height: 256px;
                 margin-top: 32px;
-              //  margin-bottom: 32px;
                 border-radius: 15px;
+
                 @media (min-width: 1025px) {
                     width: 420px;
                     height: 420px;
@@ -205,17 +183,14 @@ main{
                    height: 60%;
               
                 .tipamount,.total{
-                    // height: 25%;
                      height: 50px;
                      display: flex;
                      flex-flow: column wrap;
-                     //border: 1px solid red;
-                    // width: 100%;
                      margin: 0px 24px;
                      justify-content: center;
                      align-content: space-between;
+
                      @media (min-width: 1025px) {
-                    
                         margin: 50px 24px 0 24px ;
                      }
                      &:not(:nth-child(2)){
@@ -225,8 +200,8 @@ main{
                          margin: 0;
                          height: 30%;
                          margin: 5px 0;
-                         //border: 1px solid red;
                      }
+
                      .dollarresult{
                          text-align: end;
                          display: flex;
@@ -235,8 +210,6 @@ main{
                          width: 50%;
                          height: 100%;
                          color:white;
-                         //float: right;
-                         //border: 1px solid red;
                          h1{
                              color: var(--strongCyan);
                          }
@@ -246,8 +219,6 @@ main{
                }
 
                 #reset{
-                    //border: 1px solid red;
-                    //height: 33%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -261,6 +232,7 @@ main{
                     border: none;
                     outline: none;
                     opacity: 0.2;
+
                     h2{
                        
                         text-align: center;
@@ -268,14 +240,11 @@ main{
                         color: var(--veryDarkCyan);
                     }
                 }
-                #reset:hover,#reset:active,#reset:focus{
+
+                #reset:hover,#reset:active{
                     opacity: 1;
-                }
-                
+                }  
             }
-            
         }
-
-
     }
 }
