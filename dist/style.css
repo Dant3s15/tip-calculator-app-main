@@ -47,6 +47,8 @@ body input[type=number] {
   background-color: var(--lightGrayishCyan2);
   border-radius: 5px;
   border: none;
+  cursor: pointer;
+  caret-color: var(--strongCyan);
 }
 
 body input[type=number] ::-webkit-input-placeholder {
@@ -223,6 +225,7 @@ main .calculator .wrapper .btnfields .percentages .btn {
   height: 30%;
   color: var(--white);
   border: none;
+  cursor: pointer;
 }
 
 @media (min-width: 1025px) {
@@ -396,7 +399,7 @@ main .calculator .wrapper .results .resultsnumbers .tipamount .dollarresult h1, 
   color: var(--strongCyan);
 }
 
-main .calculator .wrapper .results .reset {
+main .calculator .wrapper .results #reset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -406,17 +409,25 @@ main .calculator .wrapper .results .reset {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: var(--mainFont);
+  font-size: 14px;
   background-color: var(--strongCyan);
   width: 100%;
   height: 50px;
   margin: 24px;
   border-radius: 5px;
+  border: none;
+  outline: none;
   opacity: 0.2;
 }
 
-main .calculator .wrapper .results .reset h2 {
+main .calculator .wrapper .results #reset h2 {
   text-align: center;
   text-transform: uppercase;
   color: var(--veryDarkCyan);
+}
+
+main .calculator .wrapper .results #reset:hover, main .calculator .wrapper .results #reset:active, main .calculator .wrapper .results #reset:focus {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

@@ -28,6 +28,8 @@ body{
         background-color: var(--lightGrayishCyan2);
         border-radius: 5px;
         border: none;
+        cursor: pointer;
+        caret-color: var(--strongCyan);
         ::placeholder{
             position: absolute;
             right: 80px;
