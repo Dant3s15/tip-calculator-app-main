@@ -1,4 +1,4 @@
-var buttons = [0, 
+const buttons = [0, 
 document.getElementById('5'),
 document.getElementById('10'),
 document.getElementById('15'),
@@ -8,17 +8,18 @@ document.getElementById('custom'),
 document.getElementById('billfield'),
 document.getElementById('numberofpeople'),
 document.getElementById('reset')];
+const noZeroPeople = document.getElementById('nozeropeople');
+const noZeroBill = document.getElementById('nozerobill');
+const bill = document.getElementById('billfield');
+const numberOfPeople = document.getElementById('numberofpeople');
+const tipamount = document.getElementById('tipamount');
+const totalTip = document.getElementById('totalresult');
+const getClass = document.getElementsByClassName('activebtn');
+var getClass2 = document.querySelector('.activebtn');
 
-let noZeroPeople = document.getElementById('nozeropeople');
-let noZeroBill = document.getElementById('nozerobill');
-let bill = document.getElementById('billfield');
-let numberOfPeople = document.getElementById('numberofpeople');
-let tipamount = document.getElementById('tipamount');
-let totalTip = document.getElementById('totalresult');
 let percent = 0; 
-var selectedBtn = 0;
-var getClass = document.getElementsByClassName('activebtn');
-var firstValue = 0;
+let selectedBtn = 0;
+let firstValue = 0;
 
 function CheckIfZero(value){
     
@@ -49,22 +50,19 @@ function CheckIfZero(value){
 }
 
 function returnResult(bill, numberOfPeople, percent, buttonsArr){
+    getHover = document.getElementsByClassName('btn:hover');
+    bill = bill.value;
+    numberOfPeople = numberOfPeople.value;
    if (buttonsArr <=6){
-        for(var i = 0; i < getClass.length; i++)
-        {
-            getClass[i].classList.remove('activebtn');
-            
-        }
-   }
+        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+            el.classList.remove('activebtn');
+        });
+     }
 
    if(buttonsArr!=0){
       getBtn = document.getElementById(percent.id); 
       getBtn.classList.add('activebtn');
    }
-
-    getHover = document.getElementsByClassName('btn:hover');
-    bill = bill.value;
-    numberOfPeople = numberOfPeople.value;
 
     if ((buttonsArr == 6)&&(buttons[6].value != "")){
         buttons[6].style.outline="solid var(--strongCyan)";
@@ -95,23 +93,12 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
        if ((firstValue==1 && buttonsArr>=7) && percent!=0){
         tipResult = tipamount.innerHTML = Math.round(((bill / numberOfPeople) * selectedBtn / 100) * 100) / 100;
         totaltip = totalTip.innerHTML = Math.round(((bill / numberOfPeople) + tipResult) * 100) / 100;
-         CheckIfZero(buttonsArr);  
-       //  alert(percent);
-        
+         CheckIfZero(buttonsArr); 
        }
     }
-    if (buttonsArr == 8){
+    if (buttonsArr == 8 ||buttonsArr == 7){
         firstValue = 1;
-    }
-    // if (buttonsArr == 7){
-
-    // }
-
-    // if (buttonsArr == 8){
-    //     if (firstValue==1)
-    //     CheckIfZero(buttonsArr);  
-    //     firstValue=1;
-    // }
+    }//helper variable to not alert about zero in fields untill percent is chosen
 
     else if (((buttonsArr == 6)&&(buttons[6].value == ""))||((buttonsArr == 6)&&(buttons[6].value == 0))){
         selectedBtn = 0;
@@ -122,11 +109,10 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 
 function ResetFields(){
     buttons[6].style.outline="none";
-        for(var i = 0; i < getClass.length; i++)
-        {
-            getClass[i].classList.remove('activebtn');
-            
-        }
+    
+        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+            el.classList.remove('activebtn');
+        });
     tipResult = tipamount.innerHTML = "0.00";
     totaltip = totalTip.innerHTML = "0.00";
     
@@ -135,13 +121,11 @@ function ResetFields(){
     }
     firstValue=0;
     selectedBtn = 0;
-    //percent=0;
     CheckIfZero("reset");
 }
-
+//event listeners------------------------------------------
 for(let i = 1; i<=8;i++){
     buttons[i].addEventListener('click',function(){returnResult(bill, numberOfPeople, buttons[i], i)});
     if (i>=6) buttons[i].addEventListener('input',function(){returnResult(bill, numberOfPeople, buttons[i], i)});
-
 }
 buttons[9].addEventListener('click', function(){ResetFields()});
