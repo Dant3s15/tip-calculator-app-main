@@ -40,6 +40,8 @@ function CheckIfZero(value){
     if (!((buttons[7].value == "") || (buttons[7].value == 0)) || value == "reset") {
             buttons[7].classList.remove('redoutline');
             noZeroBill.style.visibility='hidden';
+            //debugger;
+            
 
     }//unset red
 
@@ -62,14 +64,15 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
    if(buttonsArr!=0){
       getBtn = document.getElementById(percent.id); 
       getBtn.classList.add('activebtn');
-   }
+   } 
 
     if ((buttonsArr == 6)&&(buttons[6].value != "")){
-        buttons[6].style.outline="solid var(--strongCyan)";
+        buttons[6].style.boxShadow = "0 0 0 2pt var(--strongCyan)";
         if (buttons[6].value==0){
-            buttons[6].style.outline="solid red";
+            buttons[6].style.boxShadow = "0 0 0 2pt red";
         }
         selectedBtn = percent = buttons[6].value;
+        if (buttons[6].value == "") selectedBtn=0;
         
         let tipResult = tipamount.innerHTML = Math.round(((bill / numberOfPeople) * percent / 100) * 100) / 100;
         totaltip = totalTip.innerHTML = Math.round(((bill / numberOfPeople) + tipResult) * 100) / 100;
@@ -77,29 +80,36 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
     }//value of custom field
 
     if (buttonsArr<=5){  
-        buttons[6].style.outline="none";
+        buttons[6].style.removeProperty('box-shadow');
         selectedBtn = percent = buttons[buttonsArr].id;
         let tipResult = tipamount.innerHTML = Math.round(((bill / numberOfPeople) * percent / 100) * 100) / 100;
         totaltip = totalTip.innerHTML = Math.round(((bill / numberOfPeople) + tipResult) * 100) / 100;
         CheckIfZero(buttonsArr);
     }//buttons value
 
+   
+    if (buttonsArr <=6){
+        firstValue = 1;
+    }//helper variable to not alert about zero in fields untill percent is chosen
+   
     if (buttonsArr >= 7){
+        
         percent = buttons[selectedBtn];
         if (selectedBtn == 0 || percent==0){
             tipResult = tipamount.innerHTML = "0.00";
             totaltip = totalTip.innerHTML = "0.00";
+            
+           // if(firstValue==1) CheckIfZero(buttonsArr); 
         }
+       
        if ((firstValue==1 && buttonsArr>=7) && percent!=0){
         tipResult = tipamount.innerHTML = Math.round(((bill / numberOfPeople) * selectedBtn / 100) * 100) / 100;
         totaltip = totalTip.innerHTML = Math.round(((bill / numberOfPeople) + tipResult) * 100) / 100;
-         CheckIfZero(buttonsArr); 
+        
+        CheckIfZero(buttonsArr); 
        }
+       if (firstValue==1) CheckIfZero(percent); 
     }
-    if (buttonsArr == 8 ||buttonsArr == 7){
-        firstValue = 1;
-    }//helper variable to not alert about zero in fields untill percent is chosen
-
     else if (((buttonsArr == 6)&&(buttons[6].value == ""))||((buttonsArr == 6)&&(buttons[6].value == 0))){
         selectedBtn = 0;
         tipResult = tipamount.innerHTML = "0.00";
@@ -108,7 +118,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 }
 
 function ResetFields(){
-    buttons[6].style.outline="none";
+    buttons[6].style.removeProperty('box-shadow');
     
         Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
             el.classList.remove('activebtn');

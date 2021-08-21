@@ -47,6 +47,7 @@ body input[type=number] {
   background-color: var(--lightGrayishCyan2);
   border-radius: 5px;
   border: none;
+  outline: none;
   cursor: pointer;
   caret-color: var(--strongCyan);
 }
@@ -76,11 +77,15 @@ body input[type=number] ::placeholder {
 }
 
 body input[type=number]:focus, body input[type=number]:hover {
-  outline: solid var(--strongCyan);
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2pt var(--strongCyan);
+          box-shadow: 0 0 0 2pt var(--strongCyan);
 }
 
 body .redoutline {
-  outline: solid red !important;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2pt red !important;
+          box-shadow: 0 0 0 2pt red !important;
 }
 
 main {
@@ -121,13 +126,6 @@ main #nozeropeople, main #nozerobill {
   color: red;
 }
 
-main #billheader::after {
-  visibility: hidden;
-  color: red;
-  float: right;
-  content: "Can't be zero";
-}
-
 main .calculator {
   background-color: var(--white);
   border-radius: 15px;
@@ -153,7 +151,7 @@ main .calculator .wrapper {
   main .calculator .wrapper .btnfields {
     width: 420px;
     height: 420px;
-    padding: 50px 50px 50px 50px;
+    padding: 50px 50px 28px 50px;
   }
 }
 
@@ -265,6 +263,7 @@ main .calculator .wrapper .btnfields .percentages #custom {
   background-color: var(--lightGrayishCyan2) !important;
   border-radius: 5px;
   border: none;
+  outline: none;
 }
 
 main .calculator .wrapper .btnfields .percentages #custom ::-webkit-input-placeholder {
@@ -292,7 +291,9 @@ main .calculator .wrapper .btnfields .percentages #custom ::placeholder {
 }
 
 main .calculator .wrapper .btnfields .percentages #custom:focus, main .calculator .wrapper .btnfields .percentages #custom:hover {
-  outline: solid var(--strongCyan);
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2pt var(--strongCyan);
+          box-shadow: 0 0 0 2pt var(--strongCyan);
 }
 
 main .calculator .wrapper .btnfields .percentages .btn:last-child {
@@ -321,7 +322,6 @@ main .calculator .wrapper .results {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background-color: var(--veryDarkCyan);
-  height: 256px;
   margin-top: 32px;
   border-radius: 15px;
 }
@@ -390,7 +390,7 @@ main .calculator .wrapper .results .resultsnumbers .tipamount .dollarresult, mai
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -418,11 +418,17 @@ main .calculator .wrapper .results #reset {
   background-color: var(--strongCyan);
   width: 100%;
   height: 50px;
-  margin: 24px;
+  margin: 40px;
   border-radius: 5px;
   border: none;
   outline: none;
   opacity: 0.2;
+}
+
+@media (max-width: 1025px) {
+  main .calculator .wrapper .results #reset {
+    margin: 22px;
+  }
 }
 
 main .calculator .wrapper .results #reset h2 {
@@ -431,7 +437,7 @@ main .calculator .wrapper .results #reset h2 {
   color: var(--veryDarkCyan);
 }
 
-main .calculator .wrapper .results #reset:hover, main .calculator .wrapper .results #reset:active {
+main .calculator .wrapper .results #reset:hover, main .calculator .wrapper .results #reset:active, main .calculator .wrapper .results #reset:focus {
   opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

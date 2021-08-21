@@ -20,12 +20,12 @@ main{
         float: right;
         color: red;
     }
-    #billheader::after {
-        visibility: hidden;
-        color: red;
-        float: right;
-        content: "Can't be zero";
-    }
+    // #billheader::after {
+    //     visibility: hidden;
+    //     color: red;
+    //     float: right;
+    //     content: "Can't be zero";
+    // }
     .calculator{
         background-color: var(--white);
         border-radius: 15px;
@@ -42,7 +42,7 @@ main{
                 @media (min-width: 1025px) {
                     width: 420px;
                     height: 420px;
-                    padding: 50px 50px 50px 50px;
+                    padding: 50px 50px 28px 50px;
                 }
                 .percentagestitle{
                     margin-bottom: 10px;
@@ -123,6 +123,7 @@ main{
                         background-color: var(--lightGrayishCyan2) !important;
                         border-radius: 5px;
                         border: none;
+                        outline: none;
                         
                         ::placeholder{
                             position: absolute;
@@ -131,7 +132,9 @@ main{
                         }
 
                         &:focus,&:hover{
-                            outline: solid var(--strongCyan);
+                            //outline: solid var(--strongCyan);
+                            outline: none;
+                            box-shadow: 0 0 0 2pt var(--strongCyan);
                         }
                     }
 
@@ -159,7 +162,7 @@ main{
                 align-content: space-between;
                 flex-wrap: wrap;
                 background-color: var(--veryDarkCyan);
-                height: 256px;
+               // height: 256px;
                 margin-top: 32px;
                 border-radius: 15px;
 
@@ -205,7 +208,7 @@ main{
                      .dollarresult{
                          text-align: end;
                          display: flex;
-                         justify-content: end;
+                         justify-content: flex-end;
                          align-items: center;
                          width: 50%;
                          height: 100%;
@@ -227,12 +230,14 @@ main{
                     background-color: var(--strongCyan);
                     width: 100%;
                     height: 50px;
-                    margin: 24px;
+                    margin: 40px;
                     border-radius: 5px;
                     border: none;
                     outline: none;
                     opacity: 0.2;
-
+                    @media (max-width: 1025px) {
+                        margin: 22px;
+                    }
                     h2{
                        
                         text-align: center;
@@ -241,7 +246,7 @@ main{
                     }
                 }
 
-                #reset:hover,#reset:active{
+                #reset:hover,#reset:active,#reset:focus{
                     opacity: 1;
                 }  
             }

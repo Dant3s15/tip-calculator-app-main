@@ -28,6 +28,7 @@ body{
         background-color: var(--lightGrayishCyan2);
         border-radius: 5px;
         border: none;
+        outline: none;
         cursor: pointer;
         caret-color: var(--strongCyan);
         ::placeholder{
@@ -36,11 +37,17 @@ body{
             color: var(--veryDarkCyan);
         }
        &:focus,&:hover{
-        outline: solid var(--strongCyan);
+       // outline: solid var(--strongCyan);
+        outline: none;
+        box-shadow: 0 0 0 2pt var(--strongCyan);
+
        }
     }
     .redoutline{
-        outline: solid red !important; 
+        //outline: solid red !important; 
+        outline: none;
+        box-shadow: 0 0 0 2pt red !important; 
+
         // &:focus,&:hover{
         //     outline: solid red !important;           }
       
