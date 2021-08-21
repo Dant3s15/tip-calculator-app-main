@@ -37,20 +37,13 @@ body{
             color: var(--veryDarkCyan);
         }
        &:focus,&:hover{
-       // outline: solid var(--strongCyan);
         outline: none;
         box-shadow: 0 0 0 2pt var(--strongCyan);
 
        }
     }
     .redoutline{
-        //outline: solid red !important; 
         outline: none;
-        box-shadow: 0 0 0 2pt red !important; 
-
-        // &:focus,&:hover{
-        //     outline: solid red !important;           }
-      
-
+        box-shadow: 0 0 0 2pt red !important;
     }
 }

@@ -20,12 +20,6 @@ main{
         float: right;
         color: red;
     }
-    // #billheader::after {
-    //     visibility: hidden;
-    //     color: red;
-    //     float: right;
-    //     content: "Can't be zero";
-    // }
     .calculator{
         background-color: var(--white);
         border-radius: 15px;
@@ -132,7 +126,6 @@ main{
                         }
 
                         &:focus,&:hover{
-                            //outline: solid var(--strongCyan);
                             outline: none;
                             box-shadow: 0 0 0 2pt var(--strongCyan);
                         }
@@ -162,7 +155,6 @@ main{
                 align-content: space-between;
                 flex-wrap: wrap;
                 background-color: var(--veryDarkCyan);
-               // height: 256px;
                 margin-top: 32px;
                 border-radius: 15px;
 

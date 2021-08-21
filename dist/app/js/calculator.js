@@ -40,9 +40,6 @@ function CheckIfZero(value){
     if (!((buttons[7].value == "") || (buttons[7].value == 0)) || value == "reset") {
             buttons[7].classList.remove('redoutline');
             noZeroBill.style.visibility='hidden';
-            //debugger;
-            
-
     }//unset red
 
     if (!((buttons[8].value == "") || (buttons[8].value == 0)) || value == "reset") {
@@ -98,8 +95,6 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
         if (selectedBtn == 0 || percent==0){
             tipResult = tipamount.innerHTML = "0.00";
             totaltip = totalTip.innerHTML = "0.00";
-            
-           // if(firstValue==1) CheckIfZero(buttonsArr); 
         }
        
        if ((firstValue==1 && buttonsArr>=7) && percent!=0){
