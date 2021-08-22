@@ -18,6 +18,7 @@ const totalTip = document.getElementById('totalresult');
 //variable declarations------------------------------------
 let selectedBtn = 0;
 let firstValue = 0;
+let toggleCheck = 0;
 //functions------------------------------------------------
 function CheckIfZero(value){
 
@@ -25,26 +26,24 @@ function CheckIfZero(value){
     if ((buttons[7].value == "")||(buttons[7].value <= 0)){
         if(buttons[7].value < 0) buttons[7].value = "";//bill can't be less than 0
         buttons[7].classList.add('redoutline');
+        noZeroBill.style.visibility='visible';
         tipResult = tipamount.innerHTML = "0.00";
         totaltip = totalTip.innerHTML = "0.00";
-        noZeroBill.style.visibility='visible';
     }
 
     if ((buttons[8].value == "")||(buttons[8].value <= 0)){
         buttons[8].classList.add('redoutline');
         buttons[8].value = "";//number of people can't start with 0
+        noZeroPeople.style.visibility='visible';
         tipResult = tipamount.innerHTML = "0.00";
         totaltip = totalTip.innerHTML = "0.00";
-        noZeroPeople.style.visibility='visible';
     }
     if (!((buttons[7].value == "") || (buttons[7].value == 0)) || value == "reset") {
         buttons[7].classList.remove('redoutline');
-        noZeroBill.style.visibility='hidden';
-            
+        noZeroBill.style.visibility='hidden';    
     }
 
     if (!((buttons[8].value == "") || (buttons[8].value == 0)) || value == "reset") {
-
         buttons[8].classList.remove('redoutline');
         noZeroPeople.style.visibility='hidden';
     }
@@ -54,8 +53,8 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
     bill = bill.value;
     numberOfPeople = numberOfPeople.value;
 
-    
     if (buttonsArr <=6){
+        firstValue=1;
         Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
             el.classList.remove('activebtn');
         });
@@ -64,7 +63,6 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
     if(buttonsArr!=0){
       getBtn = document.getElementById(percent.id); 
       getBtn.classList.add('activebtn');
-      
     } 
     if(!(buttons[buttonsArr].value==0) && !(buttons[buttonsArr].value=="")){
         buttons[9].style.opacity = "1";
@@ -73,6 +71,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 
     if ((buttonsArr == 6)&&(buttons[6].value != "")){
         buttons[6].style.boxShadow = "0 0 0 2px var(--strongCyan)";
+        toggleCheck=0;
         if (buttons[6].value<=0){
             if(buttons[6].value < 0) buttons[6].value = 0;//bill can't be less than 0
             buttons[6].style.boxShadow = "0 0 0 2px red";
@@ -91,15 +90,19 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
         let tipResult = tipamount.innerHTML = Math.round(((bill / numberOfPeople) * percent / 100) * 100) / 100;
         totaltip = totalTip.innerHTML = Math.round(((bill / numberOfPeople) + tipResult) * 100) / 100;
         CheckIfZero(buttonsArr);
-    }//buttons value
+        if((buttons[buttonsArr].classList.contains('activebtn'))&& toggleCheck==buttonsArr){
+            ResetFields('toggle');  
+            toggleCheck=0;
+            if ((buttons[7].value =="") && (buttons[8].value =="")){
+                buttons[9].style.opacity = "0.2";
+                buttons[9].style.removeProperty('cursor')
+            }
+           }
+           else
+           toggleCheck=buttonsArr;
+    }//buttons value & toggle
 
-   
-    if (buttonsArr <=6){
-        firstValue = 1;
-    }//helper variable to not alert about zero in fields untill percent is chosen
-   
     if (buttonsArr >= 7){
-        
         percent = buttons[selectedBtn];
         if (selectedBtn == 0 || percent==0){
             tipResult = tipamount.innerHTML = "0.00";
@@ -114,34 +117,51 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
        }
        if (firstValue==1) CheckIfZero(percent); 
     }
+
     else if (((buttonsArr == 6)&&(buttons[6].value == ""))||((buttonsArr == 6)&&(buttons[6].value <= 0))){
         selectedBtn = 0;
         tipResult = tipamount.innerHTML = "0.00";
         totaltip = totalTip.innerHTML = "0.00";
     }//set to default if custom is empty
-
 }
 
-function ResetFields(){
-    buttons[6].style.removeProperty('box-shadow');
-    Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
-        el.classList.remove('activebtn');
-    });
-    tipResult = tipamount.innerHTML = "0.00";
-    totaltip = totalTip.innerHTML = "0.00";
-    
-    for (let i=6; i<=8; i++){
-        buttons[i].value = "";
+function ResetFields(value){
+    if(value == 'reset'){
+        buttons[6].style.removeProperty('box-shadow');
+        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+            el.classList.remove('activebtn');
+        });
+        tipResult = tipamount.innerHTML = "0.00";
+        totaltip = totalTip.innerHTML = "0.00";
+        
+        for (let i=6; i<=8; i++){
+            buttons[i].value = "";
+        }
+        firstValue=0;
+        selectedBtn = 0;
+        CheckIfZero("reset");
+        buttons[9].style.opacity = "0.2";
+        buttons[9].style.removeProperty('cursor')
+        document.activeElement.blur();
+        toggleCheck=0;
+        console.log(toggleCheck)
     }
-    firstValue=0;
-    selectedBtn = 0;
-    CheckIfZero("reset");
-    buttons[9].style.opacity = "0.2";
-    buttons[9].style.removeProperty('cursor')
+    if (value=='toggle'){
+        buttons[6].style.removeProperty('box-shadow');
+        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+            el.classList.remove('activebtn');
+        });
+        tipResult = tipamount.innerHTML = "0.00";
+        totaltip = totalTip.innerHTML = "0.00";
+        firstValue=0;
+        selectedBtn = 0;
+        CheckIfZero("reset");
+        document.activeElement.blur();//resets focus
+    }
 }
 //event listeners------------------------------------------
 for(let i = 1; i<=8;i++){
     buttons[i].addEventListener('click',function(){returnResult(bill, numberOfPeople, buttons[i], i)});
     if (i>=6) buttons[i].addEventListener('input',function(){returnResult(bill, numberOfPeople, buttons[i], i)});
 }
-buttons[9].addEventListener('click', function(){ResetFields()});
+buttons[9].addEventListener('click', function(){ResetFields('reset')});
