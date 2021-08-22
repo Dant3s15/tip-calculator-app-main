@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Dant3s15/tip-calculator-app-main)
-- Live Site URL: [Add live site URL here](https://damiansobieraj5.000webhostapp.com/)
+- Solution URL: [Github](https://github.com/Dant3s15/tip-calculator-app-main)
+- Live Site URL: [000webhost.com](https://damiansobieraj5.000webhostapp.com/)
 ### Built with
 
 - Semantic HTML5 markup
@@ -46,6 +46,4 @@ Users should be able to:
 ## Author
 
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Dant3s15)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
