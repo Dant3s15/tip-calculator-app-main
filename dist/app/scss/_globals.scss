@@ -1,5 +1,4 @@
 body{
-    //transition: all 1s;
     padding: 0;
     margin: 0;
    
@@ -33,6 +32,7 @@ body{
         outline: none;
         cursor: pointer;
         caret-color: var(--strongCyan);
+        transition: var(--tranistion);
         ::placeholder{
             position: absolute;
             right: 80px;
@@ -40,12 +40,12 @@ body{
         }
        &:focus,&:hover{
         outline: none;
-        box-shadow: 0 0 0 2pt var(--strongCyan);
+        box-shadow: 0 0 0 2px var(--strongCyan);
 
        }
     }
     .redoutline{
         outline: none;
-        box-shadow: 0 0 0 2pt red !important;
+        box-shadow: 0 0 0 2px red !important;
     }
 }

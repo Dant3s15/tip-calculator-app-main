@@ -6,11 +6,12 @@
   --lightGrayishCyan: hsl(185, 41%, 84%);
   --lightGrayishCyan2: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
-  --lightCyan: hsl(173, 61%, 77%);
+  --lightCyan: rgb(159, 232, 223);
   --mainFont: 'Space Mono', monospace;
   --regularWeight: 400;
   --boldWeight: 700;
   --formInputs: 24px;
+  --tranistion: all 0.2s ease-in-out;
 }
 
 body {
@@ -50,6 +51,8 @@ body input[type=number] {
   outline: none;
   cursor: pointer;
   caret-color: var(--strongCyan);
+  -webkit-transition: var(--tranistion);
+  transition: var(--tranistion);
 }
 
 body input[type=number] ::-webkit-input-placeholder {
@@ -78,14 +81,14 @@ body input[type=number] ::placeholder {
 
 body input[type=number]:focus, body input[type=number]:hover {
   outline: none;
-  -webkit-box-shadow: 0 0 0 2pt var(--strongCyan);
-          box-shadow: 0 0 0 2pt var(--strongCyan);
+  -webkit-box-shadow: 0 0 0 2px var(--strongCyan);
+          box-shadow: 0 0 0 2px var(--strongCyan);
 }
 
 body .redoutline {
   outline: none;
-  -webkit-box-shadow: 0 0 0 2pt red !important;
-          box-shadow: 0 0 0 2pt red !important;
+  -webkit-box-shadow: 0 0 0 2px red !important;
+          box-shadow: 0 0 0 2px red !important;
 }
 
 main {
@@ -120,7 +123,7 @@ main .logo {
 }
 
 main h5 {
-  margin-bottom: 10px;
+  margin: 10px 0;
   color: var(--darkGrayishCyan);
   font-weight: var(--boldWeight);
 }
@@ -133,7 +136,7 @@ main #nozeropeople, main #nozerobill {
 
 main .calculator {
   background-color: var(--white);
-  border-radius: 15px;
+  border-radius: 30px;
   -webkit-box-shadow: 0px 50px 40px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 50px 40px 10px rgba(0, 0, 0, 0.1);
   max-width: 920px;
@@ -144,6 +147,7 @@ main .calculator {
 @media (max-width: 1025px) {
   main .calculator {
     max-height: none;
+    border-radius: 30px 30px 0 0;
   }
 }
 
@@ -221,9 +225,9 @@ main .calculator .wrapper .btnfields .percentages {
 
 @media (min-width: 1025px) {
   main .calculator .wrapper .btnfields .percentages {
-    -ms-flex-line-pack: center;
-        align-content: center;
-    margin-bottom: 0px;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    margin-bottom: -20px;
   }
 }
 
@@ -243,7 +247,7 @@ main .calculator .wrapper .btnfields .percentages .btn {
   width: 48%;
   margin-bottom: 5%;
   min-height: 50px;
-  height: 30%;
+  height: 30% !important;
   color: var(--white);
   border: none;
   cursor: pointer;
@@ -261,6 +265,8 @@ main .calculator .wrapper .btnfields .percentages .btn h2 {
 }
 
 main .calculator .wrapper .btnfields .percentages .btn:hover, main .calculator .wrapper .btnfields .percentages .btn:active, main .calculator .wrapper .btnfields .percentages .btn:focus {
+  -webkit-transition: var(--tranistion);
+  transition: var(--tranistion);
   outline: none;
   background-color: var(--lightCyan);
   color: var(--white);
@@ -311,8 +317,8 @@ main .calculator .wrapper .btnfields .percentages #custom ::placeholder {
 
 main .calculator .wrapper .btnfields .percentages #custom:focus, main .calculator .wrapper .btnfields .percentages #custom:hover {
   outline: none;
-  -webkit-box-shadow: 0 0 0 2pt var(--strongCyan);
-          box-shadow: 0 0 0 2pt var(--strongCyan);
+  -webkit-box-shadow: 0 0 0 2px var(--strongCyan);
+          box-shadow: 0 0 0 2px var(--strongCyan);
 }
 
 main .calculator .wrapper .btnfields .percentages .btn:last-child {
@@ -353,6 +359,12 @@ main .calculator .wrapper .results {
   }
 }
 
+@media (max-width: 1025px) {
+  main .calculator .wrapper .results {
+    height: 260px;
+  }
+}
+
 main .calculator .wrapper .results h4 {
   color: var(--white);
 }
@@ -386,13 +398,25 @@ main .calculator .wrapper .results .resultsnumbers .tipamount, main .calculator 
 }
 
 @media (min-width: 1025px) {
-  main .calculator .wrapper .results .resultsnumbers .tipamount, main .calculator .wrapper .results .resultsnumbers .total {
-    margin: 50px 24px 0 24px;
+  main .calculator .wrapper .results .resultsnumbers .tipamount h1, main .calculator .wrapper .results .resultsnumbers .total h1 {
+    font-size: 45px;
   }
 }
 
 main .calculator .wrapper .results .resultsnumbers .tipamount:not(:nth-child(2)), main .calculator .wrapper .results .resultsnumbers .total:not(:nth-child(2)) {
-  margin: 50px 24px 0 24px;
+  margin: 35px 24px 16px 24px;
+}
+
+@media (min-width: 1025px) {
+  main .calculator .wrapper .results .resultsnumbers .tipamount:not(:nth-child(2)), main .calculator .wrapper .results .resultsnumbers .total:not(:nth-child(2)) {
+    margin: 40px 40px 0 40px;
+  }
+}
+
+@media (min-width: 1025px) {
+  main .calculator .wrapper .results .resultsnumbers .tipamount, main .calculator .wrapper .results .resultsnumbers .total {
+    margin: 50px 40px 0 40px;
+  }
 }
 
 main .calculator .wrapper .results .resultsnumbers .tipamount h4, main .calculator .wrapper .results .resultsnumbers .tipamount h5, main .calculator .wrapper .results .resultsnumbers .total h4, main .calculator .wrapper .results .resultsnumbers .total h5 {
@@ -441,6 +465,8 @@ main .calculator .wrapper .results #reset {
   border: none;
   outline: none;
   opacity: 0.2;
+  -webkit-transition: var(--tranistion);
+  transition: var(--tranistion);
 }
 
 @media (max-width: 1025px) {
@@ -456,6 +482,6 @@ main .calculator .wrapper .results #reset h2 {
 }
 
 main .calculator .wrapper .results #reset:hover, main .calculator .wrapper .results #reset:active, main .calculator .wrapper .results #reset:focus {
-  opacity: 1;
+  background-color: var(--lightCyan);
 }
 /*# sourceMappingURL=style.css.map */

@@ -9,7 +9,7 @@
     --lightGrayishCyan: hsl(185, 41%, 84%);
     --lightGrayishCyan2: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
-    --lightCyan: hsl(173, 61%, 77%);
+    --lightCyan: rgb(159, 232, 223);
 
     //font family
     --mainFont: 'Space Mono', monospace;
@@ -21,6 +21,8 @@
 
     //font size
     --formInputs: 24px;
+    //transitions
+    --tranistion: all 0.2s ease-in-out;
 
 
 

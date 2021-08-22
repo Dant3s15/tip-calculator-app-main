@@ -1,3 +1,4 @@
+//const declarations---------------------------------------
 const buttons = [0, 
 document.getElementById('5'),
 document.getElementById('10'),
@@ -14,59 +15,60 @@ const bill = document.getElementById('billfield');
 const numberOfPeople = document.getElementById('numberofpeople');
 const tipamount = document.getElementById('tipamount');
 const totalTip = document.getElementById('totalresult');
-const getClass = document.getElementsByClassName('activebtn');
-var getClass2 = document.querySelector('.activebtn');
-
-let percent = 0; 
+//variable declarations------------------------------------
 let selectedBtn = 0;
 let firstValue = 0;
-
+//functions------------------------------------------------
 function CheckIfZero(value){
-    
-    if ((buttons[7].value == "")||(buttons[7].value == 0)){
+    buttons[9].style.opacity = "1";
+    buttons[9].style.cursor = "pointer";
+
+    if ((buttons[7].value == "")||(buttons[7].value <= 0)){
+        if(buttons[7].value < 0) buttons[7].value = "";//bill can't be less than 0
         buttons[7].classList.add('redoutline');
         tipResult = tipamount.innerHTML = "0.00";
         totaltip = totalTip.innerHTML = "0.00";
         noZeroBill.style.visibility='visible';
-    }//set red
+    }
 
-    if ((buttons[8].value == "")||(buttons[8].value == 0)){
+    if ((buttons[8].value == "")||(buttons[8].value <= 0)){
         buttons[8].classList.add('redoutline');
+        buttons[8].value = "";//number of people can't start with 0
         tipResult = tipamount.innerHTML = "0.00";
         totaltip = totalTip.innerHTML = "0.00";
         noZeroPeople.style.visibility='visible';
-    }//set red
-
+    }
     if (!((buttons[7].value == "") || (buttons[7].value == 0)) || value == "reset") {
             buttons[7].classList.remove('redoutline');
             noZeroBill.style.visibility='hidden';
-    }//unset red
+    }
 
     if (!((buttons[8].value == "") || (buttons[8].value == 0)) || value == "reset") {
             buttons[8].classList.remove('redoutline');
             noZeroPeople.style.visibility='hidden';
-    }//unset red
-}
+    }
+}//if field values are 0 or "" add red outline after selecting percentage
 
 function returnResult(bill, numberOfPeople, percent, buttonsArr){
-    getHover = document.getElementsByClassName('btn:hover');
     bill = bill.value;
     numberOfPeople = numberOfPeople.value;
-   if (buttonsArr <=6){
+    
+    if (buttonsArr <=6){
         Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
             el.classList.remove('activebtn');
         });
-     }
+    }
 
-   if(buttonsArr!=0){
+    if(buttonsArr!=0){
       getBtn = document.getElementById(percent.id); 
       getBtn.classList.add('activebtn');
-   } 
+    } 
 
     if ((buttonsArr == 6)&&(buttons[6].value != "")){
-        buttons[6].style.boxShadow = "0 0 0 2pt var(--strongCyan)";
-        if (buttons[6].value==0){
-            buttons[6].style.boxShadow = "0 0 0 2pt red";
+        buttons[6].style.boxShadow = "0 0 0 2px var(--strongCyan)";
+        if (buttons[6].value<=0){
+            if(buttons[6].value < 0) buttons[6].value = 0;//bill can't be less than 0
+            buttons[6].style.boxShadow = "0 0 0 2px red";
         }
         selectedBtn = percent = buttons[6].value;
         if (buttons[6].value == "") selectedBtn=0;
@@ -105,7 +107,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
        }
        if (firstValue==1) CheckIfZero(percent); 
     }
-    else if (((buttonsArr == 6)&&(buttons[6].value == ""))||((buttonsArr == 6)&&(buttons[6].value == 0))){
+    else if (((buttonsArr == 6)&&(buttons[6].value == ""))||((buttonsArr == 6)&&(buttons[6].value <= 0))){
         selectedBtn = 0;
         tipResult = tipamount.innerHTML = "0.00";
         totaltip = totalTip.innerHTML = "0.00";
@@ -115,9 +117,10 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 function ResetFields(){
     buttons[6].style.removeProperty('box-shadow');
     
-        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
-            el.classList.remove('activebtn');
-        });
+    
+    Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+        el.classList.remove('activebtn');
+    });
     tipResult = tipamount.innerHTML = "0.00";
     totaltip = totalTip.innerHTML = "0.00";
     
@@ -127,6 +130,8 @@ function ResetFields(){
     firstValue=0;
     selectedBtn = 0;
     CheckIfZero("reset");
+    buttons[9].style.opacity = "0.2";
+    buttons[9].style.removeProperty('cursor')
 }
 //event listeners------------------------------------------
 for(let i = 1; i<=8;i++){

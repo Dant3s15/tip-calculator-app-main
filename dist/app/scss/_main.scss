@@ -3,20 +3,17 @@ main{
     position: relative;
     flex-direction: column;
     align-items: center;
-    // vertical-align: middle;
     height: 100vh;
     .logo{
         display: flex;
         justify-content: center;
-        // margin-top: 50px;
-        // margin-bottom: 40px;
         padding: 50px 0;
         @media (min-width: 1025px) {
             margin-top: auto;
         }
     }
     h5{
-        margin-bottom: 10px;
+        margin: 10px 0;
         color: var(--darkGrayishCyan);
         font-weight: var(--boldWeight);
     }
@@ -28,17 +25,16 @@ main{
     }
     .calculator{
         background-color: var(--white);
-        border-radius: 15px;
+        border-radius: 30px;
         box-shadow: 0px 50px 40px 10px rgba(0, 0, 0,0.1);
         max-width: 920px;
         max-height: 480px;
         margin-bottom: auto;
         @media (max-width: 1025px) {
             max-height: none;
+            border-radius: 30px 30px 0 0;
         }
-        // position: absolute;
-        // top: 50%;
-        
+
         .wrapper{
             @media (min-width: 1025px) {
                 display: flex;
@@ -54,7 +50,6 @@ main{
                     height: 420px;
                     padding: 0 16px;
                     margin: 32px 10px 32px 32px;
-                   // margin: 32px 32px 32px 25px;
                 }
                 .percentagestitle{
                     margin-bottom: 10px;
@@ -82,8 +77,8 @@ main{
                     align-items: flex-end;
                     margin-bottom: 40px;
                     @media (min-width: 1025px) {
-                        align-content: center;
-                        margin-bottom: 0px;
+                        align-content: flex-start;
+                        margin-bottom: -20px;
                      }
                     .btn{
                         display: flex;
@@ -97,11 +92,10 @@ main{
                         width: 48%;
                         margin-bottom: 5%;
                         min-height: 50px;
-                        height: 30%;
+                        height: 30% !important;
                         color: var(--white);
                         border: none;
                         cursor: pointer;
-
                         @media (min-width: 1025px) {
                            width: 31%;
                         }
@@ -114,6 +108,7 @@ main{
 
                     }
                     .btn:hover,.btn:active,.btn:focus{
+                        transition: var(--tranistion);
                         outline: none;
                         background-color: var(--lightCyan);
                         color: var(--white);
@@ -145,7 +140,7 @@ main{
 
                         &:focus,&:hover{
                             outline: none;
-                            box-shadow: 0 0 0 2pt var(--strongCyan);
+                            box-shadow: 0 0 0 2px var(--strongCyan);
                         }
                     }
 
@@ -175,12 +170,13 @@ main{
                 background-color: var(--veryDarkCyan);
                 margin-top: 32px;
                 border-radius: 15px;
-
                 @media (min-width: 1025px) {
                     width: 420px;
                     height: 420px;
                     margin: 32px 32px 32px 10px;
-                   // height: auto;
+                }
+                @media (max-width: 1025px) {
+                    height: 260px;
                 }
                 h4{
                     color: var(--white);
@@ -202,12 +198,19 @@ main{
                      margin: 0px 24px;
                      justify-content: center;
                      align-content: space-between;
-
                      @media (min-width: 1025px) {
-                        margin: 50px 24px 0 24px ;
+                        h1{
+                            font-size: 45px;
+                        }
                      }
                      &:not(:nth-child(2)){
-                         margin: 50px 24px 0 24px ;
+                         margin: 35px 24px 16px 24px;
+                         @media (min-width: 1025px) {
+                            margin: 40px 40px 0 40px ;
+                         }
+                     }
+                     @media (min-width: 1025px) {
+                        margin: 50px 40px 0 40px ;
                      }
                      h4,h5{
                          margin: 0;
@@ -245,11 +248,12 @@ main{
                     border: none;
                     outline: none;
                     opacity: 0.2;
+                    transition: var(--tranistion);
                     @media (max-width: 1025px) {
                         margin: 22px;
+                        //opacity: 1;
                     }
                     h2{
-                       
                         text-align: center;
                         text-transform: uppercase;
                         color: var(--veryDarkCyan);
@@ -257,7 +261,8 @@ main{
                 }
 
                 #reset:hover,#reset:active,#reset:focus{
-                    opacity: 1;
+                    background-color: var(--lightCyan);
+                   // opacity: 1;
                 }  
             }
         }
