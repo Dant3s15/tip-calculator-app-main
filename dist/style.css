@@ -468,7 +468,11 @@ main .calculator .wrapper .results #reset {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: var(--mainFont);
-  font-size: 14px;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--veryDarkCyan);
   background-color: var(--strongCyan);
   width: 100%;
   height: 50px;
@@ -485,12 +489,6 @@ main .calculator .wrapper .results #reset {
   main .calculator .wrapper .results #reset {
     margin: 22px;
   }
-}
-
-main .calculator .wrapper .results #reset h2 {
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--veryDarkCyan);
 }
 
 main .calculator .wrapper .results #reset:hover, main .calculator .wrapper .results #reset:active, main .calculator .wrapper .results #reset:focus {
