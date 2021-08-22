@@ -116,8 +116,6 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 
 function ResetFields(){
     buttons[6].style.removeProperty('box-shadow');
-    
-    
     Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
         el.classList.remove('activebtn');
     });
