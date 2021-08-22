@@ -144,7 +144,6 @@ function ResetFields(value){
         buttons[9].style.removeProperty('cursor')
         document.activeElement.blur();
         toggleCheck=0;
-        console.log(toggleCheck)
     }
     if (value=='toggle'){
         buttons[6].style.removeProperty('box-shadow');

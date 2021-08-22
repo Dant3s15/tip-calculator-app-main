@@ -24,12 +24,12 @@
       <div class="wrapper">
         <div class="btnfields">
           <div class="billwrapper">
-            <span><h5 id="billheader">Bill<span><h4 id ="nozerobill">Can't be zero</h4></span></h5></span>
+            <div class="title"><h3 id="billheader">Bill<h3 id ="nozerobill">Can't be zero</h3></h3></div>
             <div class="billfield">
               <input type="number" name="billfield" id="billfield" placeholder="0">
               <img src="images/icon-dollar.svg" alt="dollar">
             </div>
-            <span><h5>Select Tip %</h5></span>
+            <div class="title"><h3>Select Tip %</h3></div>
               <div class="percentages">
                 <input class="btn" id="5" type="button" value="5%">
                 <input class="btn" id="10" type="button" value="10%">
@@ -41,7 +41,7 @@
                 </div>
               </div>
           </div>
-          <span><h5 id="numberofpeopleheader">Number of People<span><h4 id ="nozeropeople">Can't be zero</h4></span></h5></span>
+          <div class="title"><h3 id="numberofpeopleheader">Number of People<h3 id ="nozeropeople">Can't be zero</h3></h3></div>
           <div class="numberofpeople"> 
             <input type="number" name="numberofpeople" id="numberofpeople" placeholder="0">
             <img src="images/icon-person.svg" alt="person">
@@ -50,17 +50,17 @@
           <div class="results">
             <div class="resultsnumbers">
               <div class="tipamount">
-                <h4>Tip Amount</h4>
-                <h5>/ person</h5>
+                <h3>Tip Amount</h3>
+                <h4>/ person</h4>
                 <div class="dollarresult"><h1>$</h1><h1 id="tipamount">0.00</h1></div> 
               </div>
               <div class="total">
-                <h4>Total</h4>
-                <h5>/ person</h5>
+                <h3>Total</h3>
+                <h4>/ person</h4>
                 <div class="dollarresult"><h1>$</h1><h1 id="totalresult">0.00</h1></div> 
               </div>
             </div>
-            <button class="reset" id="reset"><h2>Reset</h2></button>
+            <button class="reset" id="reset"><div><h2>Reset</h2></div></button>
           </div>
         </div>
       </div>
