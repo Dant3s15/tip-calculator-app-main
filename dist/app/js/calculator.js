@@ -93,7 +93,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
         if((buttons[buttonsArr].classList.contains('activebtn'))&& toggleCheck==buttonsArr){
             ResetFields('toggle');  
             toggleCheck=0;
-            if ((buttons[7].value =="") && (buttons[8].value =="")){
+            if ((buttons[6].value =="")&&(buttons[7].value =="") && (buttons[8].value =="")){
                 buttons[9].style.opacity = "0.2";
                 buttons[9].style.removeProperty('cursor')
             }
