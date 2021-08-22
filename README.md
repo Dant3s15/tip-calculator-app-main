@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/Dant3s15/tip-calculator-app-main)
-- Live Site URL: [000webhost.com](https://damiansobieraj5.000webhostapp.com/)
+- Live Site URL: [Github Pages](https://dant3s15.github.io/tip-calculator-app-main/)
 ### Built with
 
 - Semantic HTML5 markup

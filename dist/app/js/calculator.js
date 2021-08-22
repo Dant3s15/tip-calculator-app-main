@@ -20,8 +20,7 @@ let selectedBtn = 0;
 let firstValue = 0;
 //functions------------------------------------------------
 function CheckIfZero(value){
-    buttons[9].style.opacity = "1";
-    buttons[9].style.cursor = "pointer";
+
 
     if ((buttons[7].value == "")||(buttons[7].value <= 0)){
         if(buttons[7].value < 0) buttons[7].value = "";//bill can't be less than 0
@@ -39,19 +38,22 @@ function CheckIfZero(value){
         noZeroPeople.style.visibility='visible';
     }
     if (!((buttons[7].value == "") || (buttons[7].value == 0)) || value == "reset") {
-            buttons[7].classList.remove('redoutline');
-            noZeroBill.style.visibility='hidden';
+        buttons[7].classList.remove('redoutline');
+        noZeroBill.style.visibility='hidden';
+            
     }
 
     if (!((buttons[8].value == "") || (buttons[8].value == 0)) || value == "reset") {
-            buttons[8].classList.remove('redoutline');
-            noZeroPeople.style.visibility='hidden';
+
+        buttons[8].classList.remove('redoutline');
+        noZeroPeople.style.visibility='hidden';
     }
 }//if field values are 0 or "" add red outline after selecting percentage
 
 function returnResult(bill, numberOfPeople, percent, buttonsArr){
     bill = bill.value;
     numberOfPeople = numberOfPeople.value;
+
     
     if (buttonsArr <=6){
         Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
@@ -62,7 +64,12 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
     if(buttonsArr!=0){
       getBtn = document.getElementById(percent.id); 
       getBtn.classList.add('activebtn');
+      
     } 
+    if(!(buttons[buttonsArr].value==0) && !(buttons[buttonsArr].value=="")){
+        buttons[9].style.opacity = "1";
+        buttons[9].style.cursor = "pointer";
+    } //hightlight reset button when values not "" or zero
 
     if ((buttonsArr == 6)&&(buttons[6].value != "")){
         buttons[6].style.boxShadow = "0 0 0 2px var(--strongCyan)";
@@ -112,6 +119,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
         tipResult = tipamount.innerHTML = "0.00";
         totaltip = totalTip.innerHTML = "0.00";
     }//set to default if custom is empty
+
 }
 
 function ResetFields(){
