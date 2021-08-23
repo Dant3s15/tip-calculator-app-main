@@ -272,7 +272,7 @@ main .calculator .wrapper .btnfields .percentages .btn h2 {
   vertical-align: middle;
 }
 
-main .calculator .wrapper .btnfields .percentages .btn:hover, main .calculator .wrapper .btnfields .percentages .btn:active, main .calculator .wrapper .btnfields .percentages .btn:focus {
+main .calculator .wrapper .btnfields .percentages .btn:hover, main .calculator .wrapper .btnfields .percentages .btn:focus {
   -webkit-transition: var(--tranistion);
   transition: var(--tranistion);
   outline: none;

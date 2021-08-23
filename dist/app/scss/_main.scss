@@ -112,7 +112,7 @@ main{
 
 
                     }
-                    .btn:hover,.btn:active,.btn:focus{
+                    .btn:hover,.btn:focus{//,.btn:active
                         transition: var(--tranistion);
                         outline: none;
                         background-color: var(--lightCyan);

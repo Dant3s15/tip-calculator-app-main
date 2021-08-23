@@ -55,7 +55,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 
     if (buttonsArr <=6){
         firstValue=1;
-        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+        Array.from(document.querySelectorAll('.activebtn')).forEach((el) => { 
             el.classList.remove('activebtn');
         });
     }
@@ -128,7 +128,7 @@ function returnResult(bill, numberOfPeople, percent, buttonsArr){
 function ResetFields(value){
     if(value == 'reset'){
         buttons[6].style.removeProperty('box-shadow');
-        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+        Array.from(document.querySelectorAll('.activebtn')).forEach((el) => { 
             el.classList.remove('activebtn');
         });
         tipResult = tipamount.innerHTML = "0.00";
@@ -142,12 +142,13 @@ function ResetFields(value){
         CheckIfZero("reset");
         buttons[9].style.opacity = "0.2";
         buttons[9].style.removeProperty('cursor')
+        document.activeElement.focus();
         document.activeElement.blur();
         toggleCheck=0;
     }
     if (value=='toggle'){
         buttons[6].style.removeProperty('box-shadow');
-        Array.from(document.querySelectorAll('.activebtn')).forEach(function(el) { 
+        Array.from(document.querySelectorAll('.activebtn')).forEach((el) => { 
             el.classList.remove('activebtn');
         });
         tipResult = tipamount.innerHTML = "0.00";
@@ -155,12 +156,13 @@ function ResetFields(value){
         firstValue=0;
         selectedBtn = 0;
         CheckIfZero("reset");
+        document.activeElement.focus();//resets focus
         document.activeElement.blur();//resets focus
     }
 }
 //event listeners------------------------------------------
 for(let i = 1; i<=8;i++){
-    buttons[i].addEventListener('click',function(){returnResult(bill, numberOfPeople, buttons[i], i)});
-    if (i>=6) buttons[i].addEventListener('input',function(){returnResult(bill, numberOfPeople, buttons[i], i)});
+    buttons[i].addEventListener('click',() => {returnResult(bill, numberOfPeople, buttons[i], i)});
+    if (i>=6) buttons[i].addEventListener('input',() => {returnResult(bill, numberOfPeople, buttons[i], i)});
 }
-buttons[9].addEventListener('click', function(){ResetFields('reset')});
+buttons[9].addEventListener('click', () => {ResetFields('reset')});
